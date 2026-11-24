@@ -1,3 +1,13 @@
+---
+title: LanguageTranslator
+emoji: 🌐
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # miniPRJ — Government English → Hindi Translator
 
 Translates government English text into Hindi, in your browser.
