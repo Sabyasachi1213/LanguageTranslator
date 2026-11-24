@@ -14,3 +14,6 @@ sentencepiece==0.2.3
 # Python 3.14, so pip tries to build it from source and fails with a
 # Meson / "complex.h" error. Let pip pick a newer numpy with a wheel.
 numpy>=2.3
+# Only needed for the Streamlit live demo (streamlit_app.py).
+# The Flask app (app.py) does not need it.
+streamlit==1.49.1

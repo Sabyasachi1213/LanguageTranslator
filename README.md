@@ -1,13 +1,3 @@
----
-title: LanguageTranslator
-emoji: 🌐
-colorFrom: blue
-colorTo: green
-sdk: docker
-app_port: 7860
-pinned: false
----
-
 # miniPRJ — Government English → Hindi Translator
 
 Translates government English text into Hindi, in your browser.
@@ -23,8 +13,8 @@ sentence, and highlights government terms it finds, such as
 government, ministry, citizen, scheme, policy, certificate,
 application, department, services and official.
 
-**Live demo:** _add the Hugging Face Space link here once it is
-deployed — anyone can open it and translate, no login needed._
+**Live demo:** _add the Streamlit link here once it is deployed
+— anyone can open it and translate, no login needed._
 See [Live — open for everyone](#live--open-for-everyone) below.
 
 ---
@@ -382,33 +372,48 @@ Invoke-RestMethod -Uri http://localhost:5004/api/translate `
 ## Live — open for everyone
 
 GitHub alone cannot run this app: GitHub Pages only serves static
-pages, and this needs Python + the model. The live version runs on
-**Hugging Face Spaces (Docker, free)**:
+pages, and this needs Python + the model.
 
-1. Create a Space at https://huggingface.co/spaces, SDK: **Docker**,
-   visibility: **Public**.
-2. Push this repo to the Space (or link the GitHub repo to the Space).
-3. In the Space settings, add a secret: `HF_TOKEN` = your Read token
-   (only needed for the default IndicTrans2 model — see below).
-   Never put the token in the code or in GitHub.
-4. The Space builds the `Dockerfile` and gives you a public link,
-   like `https://huggingface.co/spaces/<you>/miniprj`. Anyone can
+**Hugging Face Spaces is no longer free for this:** as of
+2026-11-25, only the Static SDK is free on Hugging Face Spaces —
+Docker, Gradio and Streamlit Spaces are paid. Static cannot run
+Python or Flask, so it cannot run this app. **Do not pay for a
+Space.**
+
+The free live version runs on **Streamlit Community Cloud**
+(free for public apps, deploys straight from GitHub):
+
+1. Go to https://share.streamlit.io and sign in with GitHub.
+2. Click **Create app** / **Deploy an app**.
+3. Choose:
+   - Repository: `Sabyasachi1213/LanguageTranslator`
+   - Branch: `main`
+   - Main file path: `streamlit_app.py`
+4. Click **Deploy**. The first build takes a few minutes.
+5. Streamlit gives you a public link, like
+   `https://languagetranslator-xxxx.streamlit.app`. Anyone can
    open that link and translate — they do not need an account.
 
-**No-login live demo:** set this secret / environment variable in
-the Space instead, and the app will use a public model that needs
-no token at all:
+That live app uses the public Helsinki model
+(`Helsinki-NLP/opus-mt-en-hi`) by default, so it needs no token
+and no Hugging Face licence step. Translation quality is
+different from IndicTrans2, but anyone can try it with no login.
+The Flask app (`app.py`) stays the default locally, with
+IndicTrans2.
 
-```text
-MODEL_NAME=Helsinki-NLP/opus-mt-en-hi
-```
+Notes:
+- Streamlit apps sleep after about 12 hours with no traffic,
+  and wake up again when someone visits. The first translation
+  after waking up downloads the model again, so it can take a
+  couple of minutes.
+- To use IndicTrans2 on Streamlit instead, set `MODEL_NAME` to
+  `ai4bharat/indictrans2-en-indic-dist-200M` and add `HF_TOKEN`
+  as a secret in Streamlit Cloud (Settings → Secrets). Never
+  put the token in the code or in GitHub. That model is gated,
+  so it also needs licence access on Hugging Face.
 
-That model is Apache-2.0, public, and smaller. Translation quality
-is different from IndicTrans2, but anyone can try it with no login,
-and the IndicTrans2 code stays the default locally.
-
-The app reads `PORT` from the environment (Hugging Face Spaces
-sets it to 7860); locally it defaults to 5004.
+**Live demo:** _add the Streamlit link here once it is deployed
+— anyone can open it and translate, no login needed._
 
 ---
 
