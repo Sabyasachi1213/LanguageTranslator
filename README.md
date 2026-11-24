@@ -13,8 +13,8 @@ sentence, and highlights government terms it finds, such as
 government, ministry, citizen, scheme, policy, certificate,
 application, department, services and official.
 
-**Live demo:** _add the Streamlit link here once it is deployed
-— anyone can open it and translate, no login needed._
+**Live demo:** https://languagetranslator-weaenvdnxfpgoxgvqxhaxi.streamlit.app/
+— anyone can open it and translate, no login needed. Tested 2026-11-25: live translation verified.
 See [Live — open for everyone](#live--open-for-everyone) below.
 
 ---
@@ -412,8 +412,8 @@ Notes:
   put the token in the code or in GitHub. That model is gated,
   so it also needs licence access on Hugging Face.
 
-**Live demo:** _add the Streamlit link here once it is deployed
-— anyone can open it and translate, no login needed._
+**Live demo:** https://languagetranslator-weaenvdnxfpgoxgvqxhaxi.streamlit.app/
+— anyone can open it and translate, no login needed. Tested 2026-11-25: live translation verified.
 
 ---
 
