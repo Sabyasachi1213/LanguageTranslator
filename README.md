@@ -45,15 +45,15 @@ do not need to install it separately.
 
 1. On the GitHub page for this project, click the green **Code**
    button, then **Download ZIP**.
-2. Find the downloaded `LanguageTraslator-main.zip` (usually in Downloads).
+2. Find the downloaded `LanguageTranslator-main.zip` (usually in Downloads).
 3. Right-click it and choose **Extract All** (Windows) or
-   double-click it (Mac). You will get a folder called `LanguageTraslator`.
+   double-click it (Mac). You will get a folder called `LanguageTranslator`.
 
 **Option B — With Git (if you already have Git):**
 
 ```bash
-git clone https://github.com/Sabyasachi1213/LanguageTraslator.git
-cd LanguageTraslator
+git clone https://github.com/Sabyasachi1213/LanguageTranslator.git
+cd LanguageTranslator
 ```
 
 > The exact GitHub link will be the link for this repository.
@@ -122,7 +122,7 @@ on your computer.
 
 ### Windows
 
-1. Open the `LanguageTraslator` folder in File Explorer.
+1. Open the `LanguageTranslator` folder in File Explorer.
 2. Click the address bar at the top of the File Explorer window
    (where it shows the folder path), type `powershell`, and press
    Enter. A blue PowerShell window opens, already in that folder.
@@ -141,7 +141,7 @@ on your computer.
 2. Go into the folder, for example:
 
    ```bash
-   cd ~/Downloads/LanguageTraslator
+   cd ~/Downloads/LanguageTranslator
    ```
 
 3. Check with `ls` — you should see `app.py`,
@@ -153,7 +153,7 @@ on your computer.
 
 ### Windows — easiest way
 
-In the `LanguageTraslator` folder, **double-click `setup.bat`**.
+In the `LanguageTranslator` folder, **double-click `setup.bat`**.
 
 That one file does everything: it installs all the packages, checks
 that torch is installed, then starts the app. Wait until it says
@@ -163,7 +163,7 @@ time. **Do not close the window early.**
 
 ### Mac / Linux — easiest way
 
-In Terminal, in the `LanguageTraslator` folder, run:
+In Terminal, in the `LanguageTranslator` folder, run:
 
 ```bash
 bash setup.sh
@@ -173,14 +173,14 @@ Wait for the same "Step 2 of 2" message. Do not close Terminal early.
 
 ### If you prefer to type the commands yourself
 
-Windows (PowerShell, in the `LanguageTraslator` folder):
+Windows (PowerShell, in the `LanguageTranslator` folder):
 
 ```powershell
 python -m pip install -r requirements.txt
 python app.py
 ```
 
-Mac / Linux (Terminal, in the `LanguageTraslator` folder):
+Mac / Linux (Terminal, in the `LanguageTranslator` folder):
 
 ```bash
 python3 -m pip install -r requirements.txt
@@ -218,14 +218,14 @@ Do these 4 steps, in order:
    and create a token of type **Read**. Copy it — you will only
    see it once.
 4. **Put the token in a `.env` file** (local only — see below).
-   In the `LanguageTraslator` folder, copy `.env.example` to a new file
+   In the `LanguageTranslator` folder, copy `.env.example` to a new file
    called `.env`, and replace `hf_your_token_here` with your token:
 
    ```text
    HF_TOKEN=hf_your_token_here
    ```
 
-   Windows (PowerShell, in the `LanguageTraslator` folder):
+   Windows (PowerShell, in the `LanguageTranslator` folder):
 
    ```powershell
    Copy-Item .env.example .env
@@ -235,7 +235,7 @@ Do these 4 steps, in order:
    Then replace `hf_your_token_here` with your token, save with
    Ctrl+S, close Notepad, and restart the app with `python app.py`.
 
-   Mac / Linux (Terminal, in the `LanguageTraslator` folder):
+   Mac / Linux (Terminal, in the `LanguageTranslator` folder):
 
    ```bash
    cp .env.example .env
@@ -267,14 +267,14 @@ If you do not want to create a Hugging Face account at all, run
 the app with the public Helsinki model instead. It needs **no
 token and no licence step**, and anyone can use it:
 
-Windows (PowerShell, in the `LanguageTraslator` folder):
+Windows (PowerShell, in the `LanguageTranslator` folder):
 
 ```powershell
 $env:MODEL_NAME = "Helsinki-NLP/opus-mt-en-hi"
 python app.py
 ```
 
-Mac / Linux (Terminal, in the `LanguageTraslator` folder):
+Mac / Linux (Terminal, in the `LanguageTranslator` folder):
 
 ```bash
 MODEL_NAME=Helsinki-NLP/opus-mt-en-hi python3 app.py
@@ -307,7 +307,7 @@ seconds to start.
 
 To stop the app, go back to the terminal window and press
 **Ctrl+C**. To start it again, run `python app.py` (Windows) or
-`python3 app.py` (Mac/Linux) in the `LanguageTraslator` folder.
+`python3 app.py` (Mac/Linux) in the `LanguageTranslator` folder.
 
 ---
 
@@ -420,7 +420,7 @@ IndicTransToolkit, transformers, Flask, sentencepiece and numpy.
 - Easiest fix (Windows): double-click `fix-torch.bat`. It installs
   torch and everything else, checks them, then starts the app.
   Wait until it says the packages are OK.
-- Or, in PowerShell / Terminal, in the `LanguageTraslator` folder, run this
+- Or, in PowerShell / Terminal, in the `LanguageTranslator` folder, run this
   one command. Use `python -m pip`, not plain `pip`:
 
   ```powershell
